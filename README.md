@@ -21,8 +21,8 @@ Make sure you have Rust installed. If not, you can download it from [https://www
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/rust-task-manager.git
-    cd rust-task-manager
+    git clone https://github.com/Thizh/task_manager.git
+    cd task_manager
     ```
 
 2. Run the application:
