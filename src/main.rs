@@ -12,11 +12,15 @@ fn main() {
     println!("Task Manager");
 
     loop {
+        println!("-------------------------------");
+        println!("");
         println!("1. Add Task");
         println!("2. List Tasks");
         println!("3. Mark Task as Completed");
         println!("4. Remove Task");
         println!("5. Quit");
+        println!("");
+        println!("-------------------------------");
 
         let choice: u32 = get_user_input("Enter your choice: ").parse().expect("Invalid input. Please enter a number.");
 
@@ -49,6 +53,7 @@ fn add_task(tasks: &mut Vec<Task>, title: &str, description: &str) {
         completed: false,
     };
     tasks.push(new_task);
+    println!("Task added successfully.")
 }
 
 fn list_tasks(tasks: &Vec<Task>) {
