@@ -31,6 +31,7 @@ fn main() {
                 add_task(&mut tasks, &title, &description);
             }
             2 => list_tasks(&tasks),
+            3 => mark_as_completed(&mut tasks),
             // Add cases for marking tasks as completed, removing tasks, and quitting
             // ...
             5 => break,
@@ -62,3 +63,15 @@ fn list_tasks(tasks: &Vec<Task>) {
     }
 }
 
+fn mark_as_completed(tasks: &mut Vec<Task>) {
+    list_tasks(tasks);
+
+    let task_index: usize = get_user_input("Enter the index of the task to mark as completed: ").parse().expect("Invalid input. Please enter a number.");
+
+    if let Some(task) = tasks.get_mut(task_index - 1) {
+        task.completed = true;
+        println!("Task '{}' marked as completed.", task.title);
+    } else {
+        println!("Invalid task index.");
+    }
+}
